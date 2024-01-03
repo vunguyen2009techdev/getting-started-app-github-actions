@@ -32,4 +32,6 @@ jobs:
           echo "We are using this env: $ENVIRONMENT"
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: $REPOSITORY_VAR"
+        if: ${{ secrets.ENVIRONMENT == 'production' }
+          run: echo "hellollloo"
 

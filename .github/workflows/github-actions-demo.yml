@@ -33,6 +33,8 @@ jobs:
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: $REPOSITORY_VAR"
       - name: check condition
-        if: ${{ secrets.ENVIRONMENT == 'production' }}
+        if: $ENVIRONMENT == 'production'
+        env:
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: echo "hellollloo"
 

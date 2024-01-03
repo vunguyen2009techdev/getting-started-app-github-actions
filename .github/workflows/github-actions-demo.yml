@@ -29,7 +29,6 @@ jobs:
           USE_VARIABLES: ${{ secrets.USE_VARIABLES }}
           MY_REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
         run: |
-          echo "We are using this env: $ENVIRONMENT" | base64 --decode
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: ${{ vars.REPOSITORY_VAR }}"
           echo "My repository variable: $MY_REPOSITORY_VAR"

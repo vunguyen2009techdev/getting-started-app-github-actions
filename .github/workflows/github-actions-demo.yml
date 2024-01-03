@@ -20,8 +20,9 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: List of set hard env
-        run: echo "Hi ${{ env.mascot }}"
-        run: echo "Hi this is ${{ env.month }} month"
+        run: |
+          echo "Hi ${{ env.mascot }}"
+          echo "Hi this is ${{ env.month }} month"
       - name: Retrieve the secret ad variables and print it
         env:
           USE_VARIABLES: ${{ secrets.USE_VARIABLES }}

@@ -16,3 +16,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Retrieve the secret print it
+        env:
+          MY_ENV_VU: ${{ secrets.USE_VARIABLES }}
+        run: |
+          echo $MY_ENV_VU
+

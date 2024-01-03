@@ -34,3 +34,4 @@ jobs:
           echo "repository variable: ${{ vars.REPOSITORY_VAR }}"
           echo "My repository variable: $MY_REPOSITORY_VAR"
           echo "Hello this is my API_KEY: ${{ secrets.API_KEY }}"
+          echo "API_KEY decode: $ {{ secrets.API_KEY }}  " | base64 --decode

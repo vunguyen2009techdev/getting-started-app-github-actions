@@ -35,3 +35,9 @@ jobs:
           echo "My repository variable: $MY_REPOSITORY_VAR"
           echo "Hello this is my API_KEY: ${{ secrets.API_KEY }}"
           echo "API_KEY decode: $ {{ secrets.API_KEY }}  " | base64 --decode
+      - uses: akiojin/decode-base64-github-action@v0.1.0
+        with:
+          base64: ${{ secrets.API_KEY }}
+          environment: DECODED
+      - run: |
+          echo "here decode: $DECODED"

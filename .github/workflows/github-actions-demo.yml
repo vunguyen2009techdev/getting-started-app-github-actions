@@ -18,7 +18,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Retrieve the secret print it
         env:
-          MY_ENV_VU: ${{ secrets.USE_VARIABLES }}
+          USE_VARIABLES: ${{ secrets.USE_VARIABLES }}
+          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
         run: |
-          echo $MY_ENV_VU
+          echo "This is my secret: $USE_VARIABLES"
+          echo "repository variable: $REPOSITORY_VAR"
 

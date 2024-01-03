@@ -25,9 +25,11 @@ jobs:
           echo "Hi this is ${{ env.month }} month"
       - name: Retrieve the secret ad variables and print it
         env:
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
           USE_VARIABLES: ${{ secrets.USE_VARIABLES }}
           REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
         run: |
+          echo "We are using this env: $ENVIRONMENT"
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: $REPOSITORY_VAR"
 

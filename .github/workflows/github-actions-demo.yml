@@ -7,6 +7,7 @@ env:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    environment: MY_ENV_VU
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -32,4 +33,4 @@ jobs:
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: ${{ vars.REPOSITORY_VAR }}"
           echo "My repository variable: $MY_REPOSITORY_VAR"
-          echo "Hello this is my API_KEY: ${{ secrets.API_KEY }}" | base64 --decode
+          echo "Hello this is my API_KEY: ${{ secrets.API_KEY }}"

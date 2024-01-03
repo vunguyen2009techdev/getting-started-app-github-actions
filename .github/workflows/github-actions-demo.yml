@@ -32,9 +32,4 @@ jobs:
           echo "We are using this env: $ENVIRONMENT"
           echo "This is my secret: $USE_VARIABLES"
           echo "repository variable: $REPOSITORY_VAR"
-      - name: check condition
-        if: "$ENVIRONMENT == 'production'"
-        env:
-          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
-        run: echo "hellollloo"
-
+          echo "Hello this is my API_KEY: ${{ secrets.API_KEY }}"

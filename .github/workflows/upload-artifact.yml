@@ -28,9 +28,6 @@ jobs:
         node-version: 20.x
         cache: 'npm'
 
-    - name: npm install
-      run: npm install
-
     - name: Create artifacts
       run: |
         mkdir -p dist/artifact-A
@@ -44,14 +41,14 @@ jobs:
 
     # Test downloading a single artifact
     - name: Download artifact A
-      uses: ./
+      uses: actions/download-artifact@v4
       with:
         name: Artifact-A-${{ matrix.runs-on }}
-        path: ~/dist
+        path: dist
 
     - name: Verify successful download
       run: |
-        $file1 = "~/dist/file-A.txt"
+        $file1 = "dist/file-A.txt"
         if(!(Test-Path -path $file1)
         {
             Write-Error "Expected files do not exist"

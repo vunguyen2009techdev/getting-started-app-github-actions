@@ -66,6 +66,6 @@ jobs:
     - name: Display results
       shell: bash
       run: |
-        $file1 = "dist/file-A.txt"
+        file1 = "dist/file-A.txt"
         value=`cat $file1`
         echo The result is $value

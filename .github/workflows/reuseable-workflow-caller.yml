@@ -9,14 +9,14 @@ on:
 
 jobs:
   call-workflow-A:
-    uses: ./.github/workflows/reuseable-workflow-called.yml@main
+    uses: ./.github/workflows/reuseable-workflow-called.yml
     with:
       username: AnhVu
     secrets:
       token: ${{ secrets.TOKEN }}
 
   call-workflow-B:
-    uses: ./.github/workflows/reuseable-workflow-called.yml@main
+    uses: ./.github/workflows/reuseable-workflow-called.yml
     with:
       username: Tokai
     secrets:

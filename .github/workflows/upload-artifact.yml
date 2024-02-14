@@ -62,3 +62,6 @@ jobs:
             Write-Error "File contents of downloaded artifacts are incorrect"
         }
       shell: pwsh
+      run: |
+        value=`cat dist/file-A.txt`
+        echo The result is $value

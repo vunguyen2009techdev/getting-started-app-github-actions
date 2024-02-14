@@ -5,14 +5,14 @@ on: [push]
 
 jobs:
   call-workflow-A:
-    uses: https://github.com/vunguyen2009techdev/getting-started-app-github-actions/blob/main/.github/workflows/reuseable-workflow-called.yml@main
+    uses: ./.github/workflows/reuseable-workflow-called.yml@main
     with:
       username: AnhVu
     secrets:
       token: ${{ secrets.TOKEN }}
 
   call-workflow-B:
-    uses: https://github.com/vunguyen2009techdev/getting-started-app-github-actions/blob/main/.github/workflows/reuseable-workflow-called.yml@main
+    uses: ./.github/workflows/reuseable-workflow-called.yml@main
     with:
       username: Tokai
     secrets:

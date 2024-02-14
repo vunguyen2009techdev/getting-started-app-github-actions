@@ -1,7 +1,11 @@
 name: reuseable-workflow-caller
 run-name: ${{ github.actor }} reuseable-workflow-caller
 
-on: [push]
+on:
+  push:
+    branches: none
+
+  workflow_dispatch:
 
 jobs:
   call-workflow-A:

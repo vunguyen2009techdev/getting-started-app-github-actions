@@ -1,0 +1,19 @@
+name: reuseable-workflow-caller
+run-name: ${{ github.actor }} reuseable-workflow-caller
+
+on: [push]
+
+jobs:
+  call-workflow-A:
+    uses: getting-started-app-github-actions/.github/workflow/reuseable-workflow-called.yml@main
+    with:
+      username: AnhVu
+    secrets:
+      token: ${{ secrets.TOKEN }}
+
+  call-workflow-B:
+    uses: getting-started-app-github-actions/.github/workflow/reuseable-workflow-called.yml@main
+    with:
+      username: Tokai
+    secrets:
+      token: ${{ secrets.TOKEN }}

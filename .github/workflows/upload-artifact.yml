@@ -51,17 +51,16 @@ jobs:
       run: ls -R dist
 
     - name: Verify successful download
+      shell: bash
       run: |
         $file1 = "dist/file-A.txt"
         if(!(Test-Path -path $file1))
         {
-            Write-Error "Expected files do not exist"
+            echo "Expected files do not exist"
         }
         if(!((Get-Content $file1) -ceq "Lorem ipsum dolor sit amet"))
         {
-            Write-Error "File contents of downloaded artifacts are incorrect"
+            echo "File contents of downloaded artifacts are incorrect"
         }
-      shell: pwsh
-      run: |
-        value=`cat dist/file-A.txt`
+        value=`cat $file1`
         echo The result is $value

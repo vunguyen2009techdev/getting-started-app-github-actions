@@ -47,11 +47,11 @@ jobs:
       uses: ./
       with:
         name: Artifact-A-${{ matrix.runs-on }}
-        path: dist
+        path: ~/dist
 
     - name: Verify successful download
       run: |
-        $file1 = "dist/file-A.txt"
+        $file1 = "~/dist/file-A.txt"
         if(!(Test-Path -path $file1)
         {
             Write-Error "Expected files do not exist"

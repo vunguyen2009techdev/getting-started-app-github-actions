@@ -1,4 +1,5 @@
 name: Test
+run-name: ${{ github.actor }} is testing artifact
 on:
   push:
     paths-ignore:
@@ -46,10 +47,13 @@ jobs:
         name: Artifact-A-${{ matrix.runs-on }}
         path: dist
 
+    - name: Display structure of downloaded files
+      run: ls -R dist
+
     - name: Verify successful download
       run: |
         $file1 = "dist/file-A.txt"
-        if(!(Test-Path -path $file1)
+        if(!(Test-Path -path $file1))
         {
             Write-Error "Expected files do not exist"
         }
